@@ -20,6 +20,11 @@ body h2 {
     text-align: center;
 }
 
+.ballsContainer {
+    display: flex;
+    gap: 15px;
+}
+
 .ballContainer {
     height: 600px;
     width: 600px;
@@ -44,6 +49,30 @@ body h2 {
     animation-direction: alternate;
 }
 
+.ballContainer2 {
+    height: 600px;
+    width: 600px;
+
+    display: flex;
+    justify-content: center;
+
+    /* Make the container box for the ball */
+    border-bottom-style: solid;
+    border-right-style: solid;
+    border-left-style: solid;
+}
+
+#ball2 {
+    height: 100px;
+    width: 100px;
+    background: red;
+    border-radius: 50%;
+
+    /* Bounce 2 dimensions */
+    animation: bounceSide 1s ease-in 2s infinite;
+    animation-direction: alternate;
+}
+
 @keyframes bounce {
 	from {
         transform: translate(0,0);
@@ -51,5 +80,23 @@ body h2 {
 
     to {
         transform: translate(0, 500px);
+    }
+}
+
+@keyframes bounceSide {
+	0% {
+        transform: translate(0,0);
+    }
+    25% {
+        transform: translate(250px, 250px);
+    }
+    50% {
+        transform: translate(0, 500px);
+    }
+    75% {
+        transform: translate(-250px, 250px);
+    }
+    100% {
+        transform: translate(0, 0);
     }
 }
